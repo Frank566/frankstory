@@ -14,12 +14,12 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: '玩枫谷 - 冒险岛 GMS 区工具站',
+        title: 'Frank Story - 冒险岛 GMS 区工具站',
       },
       {
         name: 'description',
         content:
-          '玩枫谷是专为冒险岛（MapleStory）GMS 区玩家打造的工具网站，提供角色管理、Boss追踪、进度计算等实用工具，数据保存在本地浏览器。',
+          'Frank Story 是专为冒险岛（MapleStory）GMS 区玩家打造的工具网站，提供角色管理、Boss追踪、进度计算等实用工具，数据保存在本地浏览器。',
       },
     ],
   }),

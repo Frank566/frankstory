@@ -13,25 +13,12 @@ const quickLinks = TOOLS.filter((t) =>
 
 const updates = [
   {
-    date: '2026-08-20',
-    title: '新增时间看板每周提醒',
-    detail: '时间看板现在支持自定义每周重置提醒，避免错过限时任务。',
+    date: '2026-09-03',
+    title: '网站上线',
+    detail: '支持角色查询',
   },
-  {
-    date: '2026-08-05',
-    title: '小核进度计算器上线',
-    detail: '新增小核（内在能力）养成进度计算，自动汇总所需材料。',
-  },
-  {
-    date: '2026-07-22',
-    title: '角色名单支持备注排序',
-    detail: '角色名单新增按备注、职业排序功能，管理多角色更方便。',
-  },
-  {
-    date: '2026-07-10',
-    title: '修复 Boss 追踪重置时间显示错误',
-    detail: '修复了部分时区下 Boss 每周重置倒计时显示不准确的问题。',
-  },
+
+
 ]
 
 function Home() {
@@ -41,13 +28,13 @@ function Home() {
 
       <section className="mx-auto max-w-7xl px-5 pt-16 pb-14 text-center">
         <span className="inline-flex items-center rounded-full border border-emerald-700/30 bg-emerald-700/10 px-3 py-1 text-xs font-medium text-emerald-800 dark:border-emerald-400/30 dark:bg-emerald-400/10 dark:text-emerald-300">
-          冒险岛 GMS 区 · 国人玩家工具站
+          Maplestory GMSR 工具站
         </span>
         <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-bold leading-tight text-emerald-950 sm:text-5xl dark:text-white">
-          玩枫谷
+          Frank Story
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-emerald-950/70 dark:text-white/70">
-          专为冒险岛（MapleStory）GMS 区国人玩家打造的工具网站，提供角色管理、进度追踪等实用工具。
+          专为冒险岛（MapleStory）GMSR区Frank打造的工具网站，提供角色管理、进度追踪等实用工具。
           所有数据保存在本地浏览器中，无需注册登录。
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -112,12 +99,12 @@ function Home() {
         <div className="rounded-2xl border border-emerald-900/10 bg-white p-8 dark:border-white/10 dark:bg-white/5">
           <h2 className="text-xl font-bold text-emerald-950 dark:text-white">关于本站</h2>
           <p className="mt-3 text-sm leading-relaxed text-emerald-950/70 dark:text-white/70">
-            玩枫谷是一个专为冒险岛（MapleStory）GMS 区国人玩家打造的工具网站，提供角色管理、进度追踪等实用工具。
+            Frank Story 是一个专为冒险岛（MapleStory）GMS 区国人玩家打造的工具网站，提供角色管理、进度追踪等实用工具。
             我们重视隐私，所有数据保存在本地浏览器中，不会上传到任何服务器。
           </p>
           <p className="mt-3 text-sm leading-relaxed text-emerald-950/70 dark:text-white/70">
             如果你有功能建议或发现问题，欢迎加入 QQ 群与我们反馈：
-            <span className="font-semibold text-emerald-800 dark:text-emerald-300"> 123456789</span>
+            <span className="font-semibold text-emerald-800 dark:text-emerald-300"> *********</span>
           </p>
         </div>
       </section>
@@ -126,7 +113,7 @@ function Home() {
         <div className="rounded-2xl border border-amber-400/40 bg-amber-50 p-8 dark:border-amber-400/20 dark:bg-amber-400/5">
           <h2 className="text-xl font-bold text-amber-900 dark:text-amber-300">家族招募</h2>
           <p className="mt-3 text-sm leading-relaxed text-amber-900/80 dark:text-amber-200/80">
-            [NERV] 家族正在 GMS Kronos(R1) 区招募新成员，欢迎休闲、活跃的冒险家加入我们，一起打 Boss、刷远征！
+            [******] 家族正在 GMS Kronos(R1) 区招募新成员，欢迎休闲、活跃的冒险家加入我们，一起打 Boss！
           </p>
         </div>
       </section>

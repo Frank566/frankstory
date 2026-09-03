@@ -4,7 +4,7 @@ This document provides an overview of the project structure for developers and A
 
 ## Project Overview
 
-玩枫谷 (WanFengGu) — a MapleStory GMS-region toolkit site, cloned as a homepage + navigation framework. It presents the site's tool catalog (character roster, boss tracker, schedule board, calculators, wikis/guides) and links each to a placeholder page. Actual tool functionality has not been implemented yet — only the shell.
+Frank Story — a MapleStory GMS-region toolkit site, cloned as a homepage + navigation framework. It presents the site's tool catalog (character roster, boss tracker, schedule board, calculators, wikis/guides) and links each to a placeholder page. Actual tool functionality has not been implemented yet — only the shell.
 
 ### Tech Stack
 

@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ToolsRosterRouteImport } from './routes/tools/roster'
 import { Route as ToolsCharacterLookupRouteImport } from './routes/tools/character-lookup'
 import { Route as ToolsSlugRouteImport } from './routes/tools/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsRosterRoute = ToolsRosterRouteImport.update({
+  id: '/tools/roster',
+  path: '/tools/roster',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ToolsCharacterLookupRoute = ToolsCharacterLookupRouteImport.update({
@@ -33,30 +39,39 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/tools/$slug': typeof ToolsSlugRoute
   '/tools/character-lookup': typeof ToolsCharacterLookupRoute
+  '/tools/roster': typeof ToolsRosterRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/tools/$slug': typeof ToolsSlugRoute
   '/tools/character-lookup': typeof ToolsCharacterLookupRoute
+  '/tools/roster': typeof ToolsRosterRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/tools/$slug': typeof ToolsSlugRoute
   '/tools/character-lookup': typeof ToolsCharacterLookupRoute
+  '/tools/roster': typeof ToolsRosterRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/tools/$slug' | '/tools/character-lookup'
+  fullPaths: '/' | '/tools/$slug' | '/tools/character-lookup' | '/tools/roster'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/tools/$slug' | '/tools/character-lookup'
-  id: '__root__' | '/' | '/tools/$slug' | '/tools/character-lookup'
+  to: '/' | '/tools/$slug' | '/tools/character-lookup' | '/tools/roster'
+  id:
+    | '__root__'
+    | '/'
+    | '/tools/$slug'
+    | '/tools/character-lookup'
+    | '/tools/roster'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ToolsSlugRoute: typeof ToolsSlugRoute
   ToolsCharacterLookupRoute: typeof ToolsCharacterLookupRoute
+  ToolsRosterRoute: typeof ToolsRosterRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -66,6 +81,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/roster': {
+      id: '/tools/roster'
+      path: '/tools/roster'
+      fullPath: '/tools/roster'
+      preLoaderRoute: typeof ToolsRosterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tools/character-lookup': {
@@ -89,6 +111,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ToolsSlugRoute: ToolsSlugRoute,
   ToolsCharacterLookupRoute: ToolsCharacterLookupRoute,
+  ToolsRosterRoute: ToolsRosterRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

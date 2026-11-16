@@ -61,6 +61,12 @@ export const TOOLS: ToolMeta[] = [
     description: '为角色制定装备升级计划，追踪所需材料与花费。',
   },
   {
+    slug: '3l-set-solver',
+    name: '3L套装求解',
+    group: '计算器',
+    description: '录入所有三排属性装备，自动为每个部位挑选最佳组合，凑齐 3L 套装目标。',
+  },
+  {
     slug: 'checklist',
     name: '超必清单',
     group: '计算器',

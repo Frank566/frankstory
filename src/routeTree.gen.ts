@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ToolsRosterRouteImport } from './routes/tools/roster'
 import { Route as ToolsCharacterLookupRouteImport } from './routes/tools/character-lookup'
+import { Route as Tools3lSetSolverRouteImport } from './routes/tools/3l-set-solver'
 import { Route as ToolsSlugRouteImport } from './routes/tools/$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,6 +30,11 @@ const ToolsCharacterLookupRoute = ToolsCharacterLookupRouteImport.update({
   path: '/tools/character-lookup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Tools3lSetSolverRoute = Tools3lSetSolverRouteImport.update({
+  id: '/tools/3l-set-solver',
+  path: '/tools/3l-set-solver',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ToolsSlugRoute = ToolsSlugRouteImport.update({
   id: '/tools/$slug',
   path: '/tools/$slug',
@@ -38,12 +44,14 @@ const ToolsSlugRoute = ToolsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/tools/$slug': typeof ToolsSlugRoute
+  '/tools/3l-set-solver': typeof Tools3lSetSolverRoute
   '/tools/character-lookup': typeof ToolsCharacterLookupRoute
   '/tools/roster': typeof ToolsRosterRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/tools/$slug': typeof ToolsSlugRoute
+  '/tools/3l-set-solver': typeof Tools3lSetSolverRoute
   '/tools/character-lookup': typeof ToolsCharacterLookupRoute
   '/tools/roster': typeof ToolsRosterRoute
 }
@@ -51,18 +59,30 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/tools/$slug': typeof ToolsSlugRoute
+  '/tools/3l-set-solver': typeof Tools3lSetSolverRoute
   '/tools/character-lookup': typeof ToolsCharacterLookupRoute
   '/tools/roster': typeof ToolsRosterRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/tools/$slug' | '/tools/character-lookup' | '/tools/roster'
+  fullPaths:
+    | '/'
+    | '/tools/$slug'
+    | '/tools/3l-set-solver'
+    | '/tools/character-lookup'
+    | '/tools/roster'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/tools/$slug' | '/tools/character-lookup' | '/tools/roster'
+  to:
+    | '/'
+    | '/tools/$slug'
+    | '/tools/3l-set-solver'
+    | '/tools/character-lookup'
+    | '/tools/roster'
   id:
     | '__root__'
     | '/'
     | '/tools/$slug'
+    | '/tools/3l-set-solver'
     | '/tools/character-lookup'
     | '/tools/roster'
   fileRoutesById: FileRoutesById
@@ -70,6 +90,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ToolsSlugRoute: typeof ToolsSlugRoute
+  Tools3lSetSolverRoute: typeof Tools3lSetSolverRoute
   ToolsCharacterLookupRoute: typeof ToolsCharacterLookupRoute
   ToolsRosterRoute: typeof ToolsRosterRoute
 }
@@ -97,6 +118,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ToolsCharacterLookupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tools/3l-set-solver': {
+      id: '/tools/3l-set-solver'
+      path: '/tools/3l-set-solver'
+      fullPath: '/tools/3l-set-solver'
+      preLoaderRoute: typeof Tools3lSetSolverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tools/$slug': {
       id: '/tools/$slug'
       path: '/tools/$slug'
@@ -110,6 +138,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ToolsSlugRoute: ToolsSlugRoute,
+  Tools3lSetSolverRoute: Tools3lSetSolverRoute,
   ToolsCharacterLookupRoute: ToolsCharacterLookupRoute,
   ToolsRosterRoute: ToolsRosterRoute,
 }
